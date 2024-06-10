@@ -10,10 +10,10 @@ public class PickUpScript : MonoBehaviour
     int puntaje = 0;
     void OnTriggerEnter(Collider col)
     {
+        puntaje += 1;
+        puntajeTxt.text = puntaje.ToString();
         if (col.gameObject.CompareTag("Food"))
         { 
-            puntaje += 1;
-            puntajeTxt.text = puntaje.ToString();
             Destroy(col.gameObject);
         }
     }
